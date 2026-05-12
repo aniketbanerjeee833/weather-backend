@@ -26,10 +26,10 @@ export const fetchAndUpdateAllCities = async () => {
     // Process and update database
     for (const city of GLOBAL_CITIES) {
       try {
-        const weather = weatherData.find(w => w.cityName === city.cityName)?.weather;
-        const aqi = aqiData.find(a => a.cityName === city.cityName)?.aqi;
+        const weather = weatherData?.find(w => w.cityName === city.cityName)?.weather;
+        const aqi = aqiData?.find(a => a.cityName === city.cityName)?.aqi;
         // const population = populationData.find(p => p.cityName === city.cityName)?.population;
-        const currency = currencyData.find(c => c.cityName === city.cityName)?.currency;
+        const currency = currencyData?.find(c => c.cityName === city.cityName)?.currency;
 
         // Update or create city document
         let cityDoc = await City.findOne({ cityName: city.cityName });
